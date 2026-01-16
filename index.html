@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ats Friendly Tailored Cv Gen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="background-shapes"></div>
+
+  <div class="main-card">
+    <div class="header-section">
+      <div class="icon-wrapper">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+      <h1>ATS CV Generator</h1>
+      <p>Tailor your resume perfectly for any job description using AI.</p>
+    </div>
+
+    <form id="cvForm">
+      <div class="input-group">
+        <label><i class="fa-solid fa-briefcase"></i> Target Job Title</label>
+        <input type="text" id="targetJobTitle" placeholder="e.g. IT Service Desk Specialist" required />
+        <span class="helper-text">Used for the output filename</span>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-file-pdf"></i> Upload Base CV</label>
+        <div class="file-upload-wrapper">
+          <input type="file" id="cvFile" accept=".pdf,.jpg,.jpeg,.png" required />
+          <span class="file-custom-label">Choose PDF or JPG...</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-align-left"></i> Job Description</label>
+        <textarea id="jobDesc" rows="5" placeholder="Paste the full JD here..." required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-robot"></i> AI Model</label>
+        <div class="select-wrapper">
+          <select id="aiModel">
+            <option value="gemini">✨ Free Mode (Google Gemini)</option>
+            <option value="openai">🚀 Pro Mode (OpenAI Key Req.)</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" id="generateBtn" class="primary-btn">
+        <i class="fa-solid fa-bolt"></i> Generate Magic CV
+      </button>
+    </form>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>AI is analyzing keywords & tailoring your resume...</p>
+    </div>
+
+    <div id="editorArea" class="hidden">
+      <div class="divider"></div>
+      <h2><i class="fa-solid fa-pen-to-square"></i> Review & Download</h2>
+      <p class="info">The layout is fixed. Edit the content below if needed.</p>
+
+      <div class="row">
+        <div class="col">
+          <label>Full Name</label>
+          <input type="text" id="editName" />
+        </div>
+        <div class="col">
+          <label>Contact Info</label>
+          <input type="text" id="editContact" />
+        </div>
+      </div>
+
+      <div class="input-group mt-2">
+        <label>Professional Headline</label>
+        <input type="text" id="editHeadline" />
+      </div>
+
+      <div class="editor-grid">
+        <div class="input-group"><label>Summary</label><textarea id="editSummary" rows="4"></textarea></div>
+        <div class="input-group"><label>Skills</label><textarea id="editSkills" rows="4"></textarea></div>
+        <div class="input-group"><label>Experience</label><textarea id="editExperience" rows="6"></textarea></div>
+        <div class="input-group"><label>Projects</label><textarea id="editProjects" rows="4"></textarea></div>
+        <div class="input-group"><label>Education</label><textarea id="editEducation" rows="3"></textarea></div>
+        <div class="input-group"><label>Languages</label><textarea id="editLanguages" rows="2"></textarea></div>
+      </div>
+
+      <button id="downloadPdfBtn" class="success-btn">
+        <i class="fa-solid fa-download"></i> Download PDF
+      </button>
+    </div>
+
+    <div class="footer">
+      Developed with ❤️ by <strong>Shamim Mahmud</strong>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

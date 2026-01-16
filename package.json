@@ -1,0 +1,14 @@
+{
+  "name": "ats-cv-generator",
+  "version": "1.0.0",
+  "description": "ATS CV Tool by Shamim Mahmud",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "multiparty": "^4.2.3",
+    "node-fetch": "^3.3.2",
+    "pdf-parse": "^1.1.1",
+    "pdfkit": "^0.13.0",
+    "tesseract.js": "^5.0.4"
+  }
+}
